@@ -15,7 +15,7 @@ const francis = {
 
 // Create two variables `canFriedaDrinkAlcohol` and `canFrancisDrinkAlcohol` to answer,
 // respectively, to the question "Can he / she drink alcohol?".
-c
+
 const canFriedaDrinkAlcohol = frieda.age >= 18 ? true : false;
 
 const canFrancisDrinkAlcohol = francis.age >= 18 ? true : false;
