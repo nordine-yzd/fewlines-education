@@ -6,9 +6,11 @@ console.log("helo");
 
 
 const ingredients = [salad, tomato, onion];
+
 const mapp = ingredients.forEach(element => {
   element = "sliced" + element ;
 });
+
 console.log(mapp);
 
 
