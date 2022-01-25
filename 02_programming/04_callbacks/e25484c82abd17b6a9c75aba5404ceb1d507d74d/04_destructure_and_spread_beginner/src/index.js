@@ -7,7 +7,6 @@ let knowledge = {
   timeSpent: "10 weeks",
 };
 
-
 let student = {
   hasComputer: true,
   knowsTypescript: false,
@@ -17,21 +16,32 @@ let student = {
   timeSpent: "4 days",
 };
 
-
 let developer = {
-  // code here
+  ...student,
+  ...knowledge,
+
+  // give more knowledge to the student
 };
 
-
-
+console.log(developer);
 let application = ["bug", "code", "code", "code", "code", "code", "code", "code", "code"];
-
+let bug, code;
+[bug, ...code] = ["bug", "code", "code", "code", "code", "code", "code", "code", "code"];
 
 // code here
-
 
 module.exports = {
   developer,
   bug,
   code,
 };
+
+// const amnesicJohn = {
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+// const johnWithMemoryBack = {
+//   ...amnesicJohn,
+//   lastName: "Rambo",
+// };
+// console.log(johnWithMemoryBack);
