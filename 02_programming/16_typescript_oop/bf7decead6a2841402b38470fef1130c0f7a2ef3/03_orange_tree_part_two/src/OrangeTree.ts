@@ -12,6 +12,7 @@ class OrangeTree extends Tree {
   // Methods member.
   ageOneYear(): number {
     return (this.age += 1);
+    this.growOranges();
   }
   isAlive(): boolean {
     if (this.age >= 100) {
@@ -29,10 +30,10 @@ class OrangeTree extends Tree {
     }
   }
   growOranges(): string[] {
-    // this.oranges.push("🍊");
+    this.oranges.push("🍊");
   }
   pickAnOrange(): void {
-    //
+    // this.oranges.pop();
   }
 }
 
