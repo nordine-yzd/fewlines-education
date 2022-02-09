@@ -1,0 +1,41 @@
+body {
+  background: linear-gradient(#37dcf0, white);
+  /* text-align: center; */
+}
+h1,
+h2 {
+  text-align: center;
+}
+
+.First-cover {
+  background-color: #37dcf0;
+  text-align: center;
+}
+
+.flexx {
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 10px; */
+}
+ul {
+  list-style-type: "🤖";
+}
+
+li {
+  padding-left: 1rem;
+  text-indent: -0.7rem;
+}
+
+#presentation {
+  text-align: center;
+}
+hr {
+  height: 1px;
+  margin: -0.5em 0;
+  padding: 0;
+  color: blue;
+  background-color: blue;
+  border: 0;
+}
