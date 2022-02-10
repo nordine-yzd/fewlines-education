@@ -17,23 +17,28 @@ app.get("/", (request, response) => {
   response.render("home"); // 🔎 See? "home"!
 });
 
-//page forLoop.njk
-app.get("/loop", (request, response) => {
-  const elements = ["un", "deux", "trois", "quatre"];
-  response.render("forLoop", { elements });
+app.get("/books/:book", (request, response) => {
+  console.log(request.params);
+  response.send(request.params); // 🔎 See? "home"!
 });
 
+//page forLoop.njk
+// app.get("/loop", (request, response) => {
+//   const elements = ["un", "deux", "trois", "quatre"];
+//   response.render("forLoop", { elements });
+// });
+
 //page product.njk
-app.get("/product", (request, response) => {
-  const product = {
-    name: "My logo Youtubee",
-    price: 2000,
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/03/10/17/23/youtube-667451_1280.png",
-  };
-  response.render("product", { product });
-});
+// app.get("/product", (request, response) => {
+//   const product = {
+//     name: "My logo Youtubee",
+//     price: 2000,
+//     description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+//     image:
+//       "https://cdn.pixabay.com/photo/2015/03/10/17/23/youtube-667451_1280.png",
+//   };
+//   response.render("product", { product });
+// });
 
 // //page de collection de book
 // app.get("/books/:bookName", (request, response) => {
