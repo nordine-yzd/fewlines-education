@@ -1,0 +1,9 @@
+body {
+  background-color: wheat;
+}
+.div-general {
+  text-align: center;
+  border: 2px;
+  border-style: groove;
+  border-color: black;
+}
