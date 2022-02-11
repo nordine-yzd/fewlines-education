@@ -1,6 +1,7 @@
 //configuration express nunjucks
 import express from "express";
 import nunjucks from "nunjucks";
+// import cookie from "cookie";
 
 const app = express();
 
@@ -26,13 +27,57 @@ app.get("/layout", (request, response) => {
 
 app.get("/options", (request, response) => {
   response.render("options");
+  console.log(request.body);
 });
 
-//
-// const formParser = express.urlencoded({ extended: true });
+// const monObjet = [{ name: "alchimiste" }, { name: "naruto" }];
 
-// app.post("/resources", formParser, (request, response) {
-//   request.body()
+// app.get("/monObjet/:name", (req, res) => {
+//   // res.send(JSON.stringify(req.params));
+//   res.send(monObjet[1].name);
+//   // console.log(req.params);
+//   // console.log(res.cookie);
+// });
+
+//
+const formParser = express.urlencoded({ extended: true });
+
+app.post("/resources", formParser, (request, response) => {
+  console.log(request.body);
+
+  // request.body contains an object with our named fields
+  response.send(JSON.stringify(request.body));
+});
+
+//----------------------------------------------------------------------------
+
+// //creation du cookie
+// app.get("/add-cookie", (request, response) => {
+//   const favoriteColor = "blue";
+
+//   response.set(
+//     "Set-Cookie",
+//     cookie.serialize("myCookie", favoriteColor, {
+//       maxAge: 3600, // This is the time (in seconds) that this cookie will be stored
+//     })
+//   );
+
+//   response.send("The cookie has been set");
+// });
+
+// app.get("/view-cookie", (request, response) => {
+//   const cookies = cookie.parse(request.get("cookie") || "");
+//   response.send(cookies.myCookie);
+// });
+
+// app.get("/clear-cookie", (request, response) => {
+//   response.set(
+//     "Set-Cookie",
+//     cookie.serialize("myCookie", "", {
+//       maxAge: 0,
+//     })
+//   );
+//   response.send("myCookie has been deleted");
 // });
 
 //creation du server
