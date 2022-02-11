@@ -1,4 +1,4 @@
-//configuration express nunjucks
+//configuration express nunjucks--------------------------------------------------
 import express from "express";
 import nunjucks from "nunjucks";
 // import cookie from "cookie";
@@ -9,12 +9,12 @@ nunjucks.configure("views", {
   autoescape: true,
   express: app,
 });
-//configuration des path
+//configuration des path--------------------------------------------------
 app.set("view engine", "njk");
 
 app.use(express.static("public"));
 
-//creation des pages
+//creation des pages--------------------------------------------------
 app.get("/home", (request, response) => {
   // response.send("hello world");
   // response.send("yooo je suis le .send");
@@ -30,10 +30,10 @@ app.get("/options", (request, response) => {
   console.log(request.body);
 });
 
-// app.get("/post", (request, response) => {
-//   response.render("post");
-//   console.log(request.body);
-// });
+app.get("/post", (request, response) => {
+  response.render("post");
+  console.log(request.body);
+});
 
 // const monObjet = [{ name: "alchimiste" }, { name: "naruto" }];
 
