@@ -30,6 +30,11 @@ app.get("/options", (request, response) => {
   console.log(request.body);
 });
 
+// app.get("/post", (request, response) => {
+//   response.render("post");
+//   console.log(request.body);
+// });
+
 // const monObjet = [{ name: "alchimiste" }, { name: "naruto" }];
 
 // app.get("/monObjet/:name", (req, res) => {
@@ -41,12 +46,17 @@ app.get("/options", (request, response) => {
 
 //
 const formParser = express.urlencoded({ extended: true });
+// app.post("/resources", formParser, (request, response) => {
+//   // request.body contains an object with our named fields
+// });
 
-app.post("/resources", formParser, (request, response) => {
-  console.log(request.body);
+app.post("/post", formParser, (request, response) => {
+  // console.log(request.body);
+  // console.log(request.body);
+  response.send("welcome, " + request.body.username); //permet une fois que le user s'est identifié d'envoyer un messsage pour lui souahité welcome
 
-  // request.body contains an object with our named fields
-  response.send(JSON.stringify(request.body));
+  // request.body; // contains an object with our named fields
+  // response.send(JSON.stringify(request.body));
 });
 
 //----------------------------------------------------------------------------
