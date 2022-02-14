@@ -14,4 +14,4 @@ export function checkIfIWon(ticket: Draw): void {
   }
 }
 
-checkIfIWon([1, 2, 3]);
+// checkIfIWon([1, 2, 3]);
