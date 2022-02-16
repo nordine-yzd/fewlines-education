@@ -2,6 +2,7 @@
 import request from "@fewlines-education/request";
 import nunjucks from "nunjucks";
 import express from "express";
+import { platform } from "os";
 
 //configuration des modules importé
 //express
@@ -28,14 +29,11 @@ app.get("/platforms", (req, res) => {
     if (error) {
       throw error;
     }
-    res.send("hyyy");
-
     const json = JSON.parse(body);
-    console.log(json.platforms[0]);
-    // response.render("joke.njk", { joke: platform.value });
-  });
+    console.log(json.platforms);
 
-  // console.log("25     " + req.body);
+    res.render("platforms.njk", { platt: json.platforms });
+  });
 });
 
 //

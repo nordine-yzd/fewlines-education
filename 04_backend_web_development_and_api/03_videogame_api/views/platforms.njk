@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+
+{% block content%}
+
+{# <ul> #}
+{% for element in platt %}
+
+  <div align="center">
+	<h3>{{ element.name }}</h3>
+  <img src="{{element.logo.url}}" alt="{{element.name}}">
+  </div>
+
+{% endfor %}
+{# </ul> #}
+
+{% endblock %}
+
+
+
+
+{# <div align="center">Coucou je suis au mileu</div>
+<p align="center">Je suis le texte à droite</p>
+<p align="left">ils m'ont laisser tout seul à GAUCHE </p> #}
