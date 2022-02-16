@@ -3,20 +3,26 @@
 
 {% block content%}
 
-{# <ul> #}
+<ul>
 {% for element in platt %}
 
+  <div align="left">
+	    <h3>{{ element.name }}</h3>
+  </div>
+
   <div align="center">
-	<h3>{{ element.name }}</h3>
+{% if element.logo.url %}
   <img src="{{element.logo.url}}" alt="{{element.name}}">
+{% else %}
+  <h1>Il n'y a pas de photos</h1>
+  {# <img src="{{element.logo.url}}" alt="{{element.name}}"> #}
+{% endif %}
   </div>
 
 {% endfor %}
-{# </ul> #}
+</ul>
 
 {% endblock %}
-
-
 
 
 {# <div align="center">Coucou je suis au mileu</div>

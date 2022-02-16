@@ -2,7 +2,6 @@
 import request from "@fewlines-education/request";
 import nunjucks from "nunjucks";
 import express from "express";
-import { platform } from "os";
 
 //configuration des modules importé
 //express
