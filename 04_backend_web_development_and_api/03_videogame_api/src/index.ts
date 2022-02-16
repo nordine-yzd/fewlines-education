@@ -9,66 +9,73 @@ const app = express();
 //nunjucks
 app.set("view engine", "njk");
 
+//dire ce qui est public d'acces
+app.use(express.static("public"));
+
 nunjucks.configure("views", { autoescape: true, express: app });
 
-// app.get("/random-joke", (req, response) => {
-//   request("https://api.chucknorris.io/jokes/random", (error, body) => {
-//     if (error) {
-//       throw error;
-//     }
-//     const joke = JSON.parse(body);
-
-//     response.render("jokes.njk", { joke: joke.value });
-//   });
-// });
-
 //
+
 app.get("/platforms", (req, res) => {
   request("http://videogame-api.fly.dev/platforms", (error, body) => {
     if (error) {
       throw error;
     }
     const json = JSON.parse(body);
-    console.log(json.platforms);
+    // console.log(json.platforms);
 
     res.render("platforms.njk", { platt: json.platforms });
   });
 });
 
-//
+app.get("/platforms/:id", (req, res) => {
+  const slug = req.params;
+
+  request(
+    `http://videogame-api.fly.dev/games/platforms/${slug}`,
+    (error, body) => {
+      if (error) {
+        throw error;
+      }
+      const json = JSON.parse(body);
+      console.log(json);
+      // res.render("platforms_game.njk", { platt: json.platforms });
+    }
+  );
+});
+
+// app.get("/games/platforms/:id", (req, res) => {
+//   request(
+//     "http://videogame-api.fly.dev/games/platforms/<platform_id>",
+//     (error, body) => {
+//       if (error) {
+//         throw error;
+//       }
+//       const json = JSON.parse(body);
+//       console.log(json.platforms);
+
+//       res.render("platforms.njk", { platt: json.platforms });
+//     }
+//   );
+// });
+
+//----------------------------------------
+
+app.get("/", (req, res) => {
+  res.send("Hello to my website");
+});
 
 //creation du serveur local
 app.listen(3000, () => {
   console.log("Server started on http://localhost:3000");
 });
 
-//
-
-// request("https://videogame-api.fly.dev/games?page=2", (error, body) => {
-//   if (error) {
-//     throw error;
-//   }
-//   const result = JSON.parse(body);
-//   result.games; // The next 20 first Games of the API
-//   result.total; // This is still the same total number
+// pour catch tout ce qui ya apres les  " : "
+// app.get("/test/:id", (req, res) => {
+//   const re = req.params;
+//   console.log(re);
+//   res.send(re.id);
 // });
-
-//----------------------------------------
-
-app.get("/", (req, res) => {
-  // request("https://videogame-api.fly.dev/games", (error, body) => {
-  //   if (error) {
-  //     throw error;
-  //   }
-
-  //   const result = JSON.parse(body);
-  //   console.log(result);
-
-  //   result.games; // 20 first Games of the API
-  //   result.total; // Total number of Games. You can get the number of pages with a division
-  // });
-  res.send("Hello to my website");
-});
 
 //---------------CHUCK NORIS------------------
 

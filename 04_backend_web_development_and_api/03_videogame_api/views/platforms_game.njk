@@ -12,10 +12,10 @@
 
   <div align="center">
 {% if element.logo.url %}
-  <img src="{{element.logo.url}}" onclick=window.location.href=`http://localhost:3000/platforms/{{element.id}}` alt="{{element.name}}">
+  <img src="{{element.logo.url}}" onclick=window.location.href=`http://localhost:3000/test/{{element.id}}` alt="{{element.name}}">
 {% else %}
   {# <h1>Il n'y a pas de photos</h1> #}
-  <img src="/images/logo.png" onclick=window.location.href=`http://localhost:3000/platforms/{{element.id}}` title="{{ element.name }}" alt="{{element.name}}">
+  <img src="/images/logo.png" onclick=window.location.href=`http://localhost:3000/games/test/{{element.id}}` title="{{ element.name }}" alt="{{element.name}}">
 {% endif %}
   </div>
 
@@ -23,3 +23,4 @@
 </ul>
 
 {% endblock %}
+
