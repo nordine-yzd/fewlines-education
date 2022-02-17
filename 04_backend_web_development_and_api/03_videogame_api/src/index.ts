@@ -16,54 +16,74 @@ nunjucks.configure("views", { autoescape: true, express: app });
 
 //
 
+app.get("/", (req, res) => {
+  res.send("Hello to my website");
+});
+
+//  http://videogame-api.fly.dev/platforms?page=2
+
+// app.get("/platforms?page=2", (req, res) => {
+//   // request("http://videogame-api.fly.dev/platforms?page=2", (error, body) => {
+//   //   if (error) {
+//   //     throw error;
+//   //   }
+//   //   const json = JSON.parse(body);
+//   //   // console.log(json.platforms);
+//   //   res.render("platforms.njk", { platt: json.platforms });
+//   // });
+//   res.send("hello ");
+//   console.log(req.query);
+// });
+
+//
+
 app.get("/platforms", (req, res) => {
-  request("http://videogame-api.fly.dev/platforms", (error, body) => {
+  request("http://videogame-api.fly.dev/platforms?page=2", (error, body) => {
     if (error) {
       throw error;
     }
     const json = JSON.parse(body);
     // console.log(json.platforms);
 
-    res.render("platforms.njk", { platt: json.platforms });
+    // res.render("platforms.njk", { platt: json.platforms });
   });
+  console.log(req.query);
+
+  res.send("hoye");
 });
 
 app.get("/platforms/:id", (req, res) => {
   const slug = req.params;
-
+  // console.log(slug.id);
+  // console.log(`https://videogame-api.fly.dev/games/platforms/${slug.id}`);
   request(
-    `http://videogame-api.fly.dev/games/platforms/${slug}`,
+    `https://videogame-api.fly.dev/games/platforms/${slug.id}`,
     (error, body) => {
       if (error) {
         throw error;
       }
       const json = JSON.parse(body);
-      console.log(json);
-      // res.render("platforms_game.njk", { platt: json.platforms });
+      // console.log(json.games);
+      res.render("game_in_platforms.njk", { games: json.games });
     }
   );
 });
 
-// app.get("/games/platforms/:id", (req, res) => {
-//   request(
-//     "http://videogame-api.fly.dev/games/platforms/<platform_id>",
-//     (error, body) => {
-//       if (error) {
-//         throw error;
-//       }
-//       const json = JSON.parse(body);
-//       console.log(json.platforms);
+app.get("/games/:id", (req, res) => {
+  const slug = req.params;
+  request(`https://videogame-api.fly.dev/games/${slug.id}`, (error, body) => {
+    if (error) {
+      throw error;
+    }
+    const json = JSON.parse(body);
+    console.log(json);
 
-//       res.render("platforms.njk", { platt: json.platforms });
-//     }
-//   );
-// });
+    res.render("details_of_game.njk", { details: json });
+  });
+  // res.send("helloeeeee");
+});
 
 //----------------------------------------
-
-app.get("/", (req, res) => {
-  res.send("Hello to my website");
-});
 
 //creation du serveur local
 app.listen(3000, () => {
