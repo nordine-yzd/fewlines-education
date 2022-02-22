@@ -1,28 +1,21 @@
 {
-  "name": "04_chuck_norris_api_with_promises",
+  "name": "02_warmup_sum_smallest_2_numbers",
   "version": "1.0.0",
-  "main": "./src/index.ts",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
-    "test": "eslint --ext .js,.ts . && sparta test"
+    "start": "ts-node src/index.ts",
+    "test": "eslint --ext .js,.ts . && sparta test",
+    "bonus-test": "BONUS_TEST=1 sparta test"
   },
   "devDependencies": {
     "@types/jest": "26.0.10",
-    "@types/node-fetch": "^2.6.1",
     "@typescript-eslint/eslint-plugin": "3.10.1",
     "@typescript-eslint/parser": "3.10.1",
-    "camp2-helpers": "fewlines-education/camp2-helpers#main",
     "eslint": "7.7.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "fetch-mock-jest": "^1.2.8",
-    "fwl-readline": "fewlines-education/fwl-readline#master",
     "jest": "26.4.2",
-    "node-fetch": "2",
-    "readline": "^1.3.0",
     "ts-jest": "26.3.0",
-    "ts-node": "9.0.0",
+    "ts-node": "^9.1.1",
     "typescript": "4.0.2"
   },
   "eslintConfig": {
@@ -35,9 +28,7 @@
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier/@typescript-eslint",
-      "plugin:prettier/recommended"
+      "plugin:@typescript-eslint/recommended"
     ],
     "plugins": [
       "@typescript-eslint"
@@ -53,8 +44,7 @@
       "src.sample/*"
     ],
     "rules": {
-      "@typescript-eslint/explicit-function-return-type": 1,
-      "@typescript-eslint/no-explicit-any": 0
+      "@typescript-eslint/no-inferrable-types": 0
     }
   },
   "jest": {
@@ -67,16 +57,5 @@
       }
     },
     "testEnvironment": "node"
-  },
-  "prettier": {
-    "semi": true,
-    "trailingComma": "all",
-    "singleQuote": false,
-    "printWidth": 120,
-    "tabWidth": 2
-  },
-  "dependencies": {
-    "prettier": "2.1.1",
-    "request": "^2.88.2"
   }
 }
