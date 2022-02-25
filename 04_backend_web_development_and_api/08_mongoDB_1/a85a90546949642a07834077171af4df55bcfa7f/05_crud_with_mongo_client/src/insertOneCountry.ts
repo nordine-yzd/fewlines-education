@@ -1,5 +1,16 @@
-import { Db } from "mongodb";
+import { Db, MongoClient, ObjectId } from "mongodb";
 
-export function insertOneCountry(db: Db) {
+type Country = {
+  _id: string;
+  name: string;
+  capital: string;
+  continent: string;
+};
+
+export async function insertOneCountry(db: Db, country: Country): Promise<string> {
   // code your function here
+  return db
+    .collection<Country>("worldAtlas")
+    .insertOne(country)
+    .then((result) => result.insertedId);
 }
