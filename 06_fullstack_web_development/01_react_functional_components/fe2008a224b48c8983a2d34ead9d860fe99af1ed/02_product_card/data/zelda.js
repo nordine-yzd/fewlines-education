@@ -37,24 +37,24 @@ export default {
     {
       url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/bf4ag3vxlfnv0nhhplga.jpg",
     },
-    {
-      url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/qoytovwmzj70nufwxb2r.jpg",
-    },
-    {
-      url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/mftmubfp9ntwbreejfi7.jpg",
-    },
-    {
-      url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/eirwofgnucvx7h87svr2.jpg",
-    },
-    {
-      url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/gcdqd20hi1wgmguu3reg.jpg",
-    },
-    {
-      url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/ayjm7juog9vitiwbfrcz.jpg",
-    },
-    {
-      url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/ods1wksjfo9h0v7fpigo.jpg",
-    },
+    // {
+    //   url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/qoytovwmzj70nufwxb2r.jpg",
+    // },
+    // {
+    //   url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/mftmubfp9ntwbreejfi7.jpg",
+    // },
+    // {
+    //   url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/eirwofgnucvx7h87svr2.jpg",
+    // },
+    // {
+    //   url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/gcdqd20hi1wgmguu3reg.jpg",
+    // },
+    // {
+    //   url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/ayjm7juog9vitiwbfrcz.jpg",
+    // },
+    // {
+    //   url: "//images.igdb.com/igdb/image/upload/t_screenshot_big/ods1wksjfo9h0v7fpigo.jpg",
+    // },
   ],
   slug: "the-legend-of-zelda-breath-of-the-wild",
   summary:
