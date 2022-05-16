@@ -17,6 +17,13 @@ export default {
         url: "//images.igdb.com/igdb/image/upload/t_logo_med/pl6b.png",
       },
     },
+    {
+      name: "Nintendo Switch",
+      slug: "switch",
+      platform_logo: {
+        url: "//images.igdb.com/igdb/image/upload/t_logo_med/pl6b.png",
+      },
+    },
   ],
   screenshots: [
     {

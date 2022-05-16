@@ -9,7 +9,9 @@ app.use(express.static("public"));
 
 //page de notre serveur qui fait appel a index.html
 app.get("/1", (request, response) => {
-  response.sendFile("/Users/z5/Workspace/my-first-website/src/page.html");
+  response.sendFile(
+    "/Users/z5/Workspace/fewlines-education/exercises/03_frontend_development/02_express/f5c04629aa46be23ca8de8a06fba33f447289dc8/exercices express/src/page.html"
+  );
 });
 
 //
