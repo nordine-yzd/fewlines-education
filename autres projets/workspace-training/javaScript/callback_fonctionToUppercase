@@ -1,0 +1,13 @@
+// creation d'une fonction qui va console log une phrase miniscule en majuscule
+function upperCase (userInput) {
+  return console.log(userInput.toUpperCase());
+}
+//methode callback
+const call = (userInput, callback) => {
+  callback(userInput)
+}
+
+
+
+upperCase("salut ca va");
+call("salut ca va !",upperCase);

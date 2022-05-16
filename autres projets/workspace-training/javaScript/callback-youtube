@@ -1,0 +1,32 @@
+const array1 = [1, 2, 3];
+
+function foo(array, isi) {
+  const newArray = [];
+
+  for (i = 0; i < array.length; i++) {
+    newArray.push(isi(array[i]));
+  }
+
+  return newArray;
+}
+//on peut changer les noms de call
+const result = foo(array1, (call) => {
+  return call * 2;
+});
+
+const result2 = foo(array1, (triple) => {
+  return triple * 3;
+});
+
+// console.log(result);
+// console.log(result2);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function callback1(premiere) {
+  console.log("je suis la premiere fonction");
+}
+
+function callback2(deuxieme) {
+  console.log("je suis la deuxieme fonction");
+}
+callback1(callback2);

@@ -1,0 +1,10 @@
+{
+  "name": "my-new-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  }
+}

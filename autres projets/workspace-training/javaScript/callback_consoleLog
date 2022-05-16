@@ -1,0 +1,49 @@
+// //creation de la fonction qui se trouvera dans une autre fonction
+// const fonction1 = () => {
+//   console.log("je suis la fonction 1");
+// };
+
+// // creation de la fonction callback
+// function fonction2 (callback) {
+//   console.log("je suis la fonction 2");
+//   callback();
+//   }
+
+//   fonction2(fonction1);
+
+//////////////////////////////////////////////////////////////////
+
+//creation de la fonction qui se trouvera dans une autre fonction
+const fonction1 = () => {
+  console.log("je suis la fonction 1");
+}
+
+// creation de la fonction callback
+function fonction2 (nono, callback) {
+  console.log(`je suis fonction 2 `);
+  console.log(`${nono}`);
+  callback();
+  }
+
+//log de tout les test
+console.log("\nfonction1()");
+fonction1();
+console.log("\nfonction1(fonction1)");
+fonction1(fonction1)
+console.log("\nfonction1( fonction1() )");
+fonction1(fonction1())
+console.log("\nfonction1(fonction2)");
+fonction1(fonction2)
+// console.log("\nfonction1(fonction2())");
+// fonction1(fonction2())
+console.log("\n\n\n-------------fonction 2------------");
+// console.log("\nfonction2();");
+// fonction2();
+// console.log("\nfonction2(fonction2)");
+// fonction2(fonction2)
+// console.log("\nfonction2( fonction2() )");
+// fonction2(fonction2())
+console.log("\nfonction2(fonction1)");
+fonction2("nononono", fonction1)
+// console.log("\nfonction2( fonction1() )");
+// fonction2(fonction1())

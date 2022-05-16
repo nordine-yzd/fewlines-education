@@ -1,0 +1,3 @@
+const [winner] = ["Max Verstappen"];
+console.log(typeof winner);
+console.log(winner);
